@@ -1,0 +1,20 @@
+$namesapce: 'el';
+@mixin b($block) {
+    $B: $namesapce + '-' + $block !global;
+    .#{$B} {
+        @content
+    }
+}
+
+$state-prefix: 'is-';
+@mixin when($state) {
+    @at-root {
+        &.#{$state-prefix + $state} {
+            @content
+        }
+    }
+}
+
+$--header-padding: 40px;
+$--footer-padding: 0 20px !default;
+$--main-padding: 20px !default;
